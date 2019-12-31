@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/germancuello/react-echarts/static/css/main.fe665706.chunk.css",
+    "main.js": "/germancuello/react-echarts/static/js/main.182e3c46.chunk.js",
+    "main.js.map": "/germancuello/react-echarts/static/js/main.182e3c46.chunk.js.map",
+    "runtime-main.js": "/germancuello/react-echarts/static/js/runtime-main.d9eef114.js",
+    "runtime-main.js.map": "/germancuello/react-echarts/static/js/runtime-main.d9eef114.js.map",
+    "static/js/2.bb82febe.chunk.js": "/germancuello/react-echarts/static/js/2.bb82febe.chunk.js",
+    "static/js/2.bb82febe.chunk.js.map": "/germancuello/react-echarts/static/js/2.bb82febe.chunk.js.map",
+    "index.html": "/germancuello/react-echarts/index.html",
+    "precache-manifest.d53285c928f47f28bf40bab5b8c9016c.js": "/germancuello/react-echarts/precache-manifest.d53285c928f47f28bf40bab5b8c9016c.js",
+    "service-worker.js": "/germancuello/react-echarts/service-worker.js",
+    "static/css/main.fe665706.chunk.css.map": "/germancuello/react-echarts/static/css/main.fe665706.chunk.css.map",
+    "static/js/2.bb82febe.chunk.js.LICENSE": "/germancuello/react-echarts/static/js/2.bb82febe.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d9eef114.js",
+    "static/js/2.bb82febe.chunk.js",
+    "static/css/main.fe665706.chunk.css",
+    "static/js/main.182e3c46.chunk.js"
+  ]
+}
