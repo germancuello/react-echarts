@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/germancuello/react-echarts-deploy/static/css/main.fe665706.chunk.css",
-    "main.js": "/germancuello/react-echarts-deploy/static/js/main.9c96a364.chunk.js",
-    "main.js.map": "/germancuello/react-echarts-deploy/static/js/main.9c96a364.chunk.js.map",
-    "runtime-main.js": "/germancuello/react-echarts-deploy/static/js/runtime-main.28b9e741.js",
-    "runtime-main.js.map": "/germancuello/react-echarts-deploy/static/js/runtime-main.28b9e741.js.map",
-    "static/js/2.bb82febe.chunk.js": "/germancuello/react-echarts-deploy/static/js/2.bb82febe.chunk.js",
-    "static/js/2.bb82febe.chunk.js.map": "/germancuello/react-echarts-deploy/static/js/2.bb82febe.chunk.js.map",
-    "index.html": "/germancuello/react-echarts-deploy/index.html",
-    "precache-manifest.d74ef7d2c46c6d9f7ff54e91b845d26f.js": "/germancuello/react-echarts-deploy/precache-manifest.d74ef7d2c46c6d9f7ff54e91b845d26f.js",
-    "service-worker.js": "/germancuello/react-echarts-deploy/service-worker.js",
-    "static/css/main.fe665706.chunk.css.map": "/germancuello/react-echarts-deploy/static/css/main.fe665706.chunk.css.map",
-    "static/js/2.bb82febe.chunk.js.LICENSE": "/germancuello/react-echarts-deploy/static/js/2.bb82febe.chunk.js.LICENSE"
+    "main.css": "/react-echarts/static/css/main.d8fb820a.chunk.css",
+    "main.js": "/react-echarts/static/js/main.82db0e9e.chunk.js",
+    "main.js.map": "/react-echarts/static/js/main.82db0e9e.chunk.js.map",
+    "runtime-main.js": "/react-echarts/static/js/runtime-main.1ab9b6a2.js",
+    "runtime-main.js.map": "/react-echarts/static/js/runtime-main.1ab9b6a2.js.map",
+    "static/js/2.8c493ddd.chunk.js": "/react-echarts/static/js/2.8c493ddd.chunk.js",
+    "static/js/2.8c493ddd.chunk.js.map": "/react-echarts/static/js/2.8c493ddd.chunk.js.map",
+    "index.html": "/react-echarts/index.html",
+    "precache-manifest.2049dc5b126e3439c2616dd3dbcacce4.js": "/react-echarts/precache-manifest.2049dc5b126e3439c2616dd3dbcacce4.js",
+    "service-worker.js": "/react-echarts/service-worker.js",
+    "static/css/main.d8fb820a.chunk.css.map": "/react-echarts/static/css/main.d8fb820a.chunk.css.map",
+    "static/js/2.8c493ddd.chunk.js.LICENSE": "/react-echarts/static/js/2.8c493ddd.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.28b9e741.js",
-    "static/js/2.bb82febe.chunk.js",
-    "static/css/main.fe665706.chunk.css",
-    "static/js/main.9c96a364.chunk.js"
+    "static/js/runtime-main.1ab9b6a2.js",
+    "static/js/2.8c493ddd.chunk.js",
+    "static/css/main.d8fb820a.chunk.css",
+    "static/js/main.82db0e9e.chunk.js"
   ]
 }
