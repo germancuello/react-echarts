@@ -3,12 +3,6 @@ import range from 'lodash/range';
 import ReactEcharts from 'echarts-for-react';
 
 class Chart extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedLegends: [(props.data[0] || {}).name],
-    }
-  }
   updateDataByAddtionalPrice() {
     const { data, priceGivenOnSlider, countOfYears } = this.props;
     const updatedData = data.map(item => {
@@ -52,14 +46,18 @@ class Chart extends Component {
   }
 
   getChartOption = () => {
-    const { startYear, backgroundColor } = this.props;
-    const { selectedLegends } = this.state;
+    const { startYear, backgroundColor, selectedLegends } = this.props;
+
     const defaultOptions = this.getEchartDefaultOption();
     const updatedData = this.updateDataByAddtionalPrice();
+
     const legendState = {};
     updatedData.forEach(({ name }) => legendState[name] = selectedLegends.includes(name));
+
+    // NOTE: Make x axis data
     const xAxisData = range(startYear, startYear + this.props.countOfYears - 1);
     xAxisData.unshift('Today');
+
     const options = {
       grid: {
         ...defaultOptions.grid,
@@ -114,6 +112,19 @@ class Chart extends Component {
     return options;
   }
 
+  onLegendItemClick = ({ selected }) => {
+    const { handleLegendChange, data } = this.props;
+    const selectedLegends = data
+      .map(({ name }) => name)
+      .filter(name => selected[name]);
+
+    handleLegendChange(selectedLegends);
+  }
+
+  onEvents = {
+    legendselectchanged: this.onLegendItemClick,
+  }
+
   render() {
     const { height, width } = this.props;
     return (
@@ -122,6 +133,7 @@ class Chart extends Component {
         option={this.getChartOption()}
         notMerge
         lazyUpdate
+        onEvents={this.onEvents}
       />
     );
   }

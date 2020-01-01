@@ -42,33 +42,39 @@ class App extends Component {
     super(props);
     this.state = {
       value: 1500,
+      selectedLegends: [(data[0] || {}).name],
     }
   }
+
   render() {
     const { value } = this.state;
     return (
       <>
         <h1>Chart Component</h1>
         <div className="app-slider">
+          Price given on slider: {value}
+          <br />
           <input
             type="range"
             value={value}
-            min="0"
-            max="10000"
+            min="200"
+            max="2500"
             step="10"
             onInput={(e) => this.setState({ value: e.target.value })}
+            className="app-slider-input"
           />
-          <span id="output">{value}</span>
         </div>
         <div className="app-chart">
           <Chart
             height="100%"
             width="100%"
             backgroundColor="transparent"
-            data={data}
+            data={data || []}
             startYear={startYear}
             countOfYears={countOfYears}
-            priceGivenOnSlider={this.state.value}
+            priceGivenOnSlider={value}
+            selectedLegends={this.state.selectedLegends}
+            handleLegendChange={(validLegends) => this.setState({ selectedLegends: validLegends })}
           />
         </div>
       </>
