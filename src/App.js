@@ -3,7 +3,7 @@ import Chart from './components/Chart';
 import './App.css';
 
 const priceGivenOnSlider = 1500;
-const countOfYears = 10;
+const countOfYears = 11;
 const startYear=2021;
 const data = [
   {

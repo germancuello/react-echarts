@@ -8,7 +8,7 @@ class Chart extends Component {
     const updatedData = data.map(item => {
       const additionalPrice = (priceGivenOnSlider - item.carbonPriceToday) / countOfYears;
       const { CO2perTon, currentPrice } = item;
-      item['prices'] = range(0, countOfYears).map(idx => additionalPrice * (idx + 1)  * CO2perTon + currentPrice);
+      item['prices'] = range(0, countOfYears).map(idx => additionalPrice * idx * CO2perTon + currentPrice);
       return item;
     });
     return updatedData;
@@ -49,6 +49,8 @@ class Chart extends Component {
     const { startYear, backgroundColor } = this.props;
     const defaultOptions = this.getEchartDefaultOption();
     const updatedData = this.updateDataByAddtionalPrice();
+    const xAxisData = range(startYear, startYear + this.props.countOfYears - 1);
+    xAxisData.unshift('Today');
     const options = {
       grid: {
         ...defaultOptions.grid,
@@ -78,7 +80,7 @@ class Chart extends Component {
         axisLine: { show: false },
         axisTick: { show: false },
         splitLine: { show: false },
-        data: range(startYear, startYear + this.props.countOfYears),
+        data: xAxisData,
       }],
       yAxis: [{
         name: 'Price',
