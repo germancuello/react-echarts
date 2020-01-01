@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Chart from './components/Chart';
 import './App.css';
 
-const priceGivenOnSlider = 1500;
 const countOfYears = 11;
 const startYear=2021;
 const data = [
@@ -39,10 +38,28 @@ const data = [
 ];
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 1500,
+    }
+  }
   render() {
+    const { value } = this.state;
     return (
       <>
         <h1>Chart Component</h1>
+        <div className="app-slider">
+          <input
+            type="range"
+            value={value}
+            min="0"
+            max="10000"
+            step="10"
+            onInput={(e) => this.setState({ value: e.target.value })}
+          />
+          <span id="output">{value}</span>
+        </div>
         <div className="app-chart">
           <Chart
             height="100%"
@@ -51,7 +68,7 @@ class App extends Component {
             data={data}
             startYear={startYear}
             countOfYears={countOfYears}
-            priceGivenOnSlider={priceGivenOnSlider}
+            priceGivenOnSlider={this.state.value}
           />
         </div>
       </>

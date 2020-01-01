@@ -3,6 +3,12 @@ import range from 'lodash/range';
 import ReactEcharts from 'echarts-for-react';
 
 class Chart extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedLegends: [(props.data[0] || {}).name],
+    }
+  }
   updateDataByAddtionalPrice() {
     const { data, priceGivenOnSlider, countOfYears } = this.props;
     const updatedData = data.map(item => {
@@ -47,8 +53,11 @@ class Chart extends Component {
 
   getChartOption = () => {
     const { startYear, backgroundColor } = this.props;
+    const { selectedLegends } = this.state;
     const defaultOptions = this.getEchartDefaultOption();
     const updatedData = this.updateDataByAddtionalPrice();
+    const legendState = {};
+    updatedData.forEach(({ name }) => legendState[name] = selectedLegends.includes(name));
     const xAxisData = range(startYear, startYear + this.props.countOfYears - 1);
     xAxisData.unshift('Today');
     const options = {
@@ -65,12 +74,14 @@ class Chart extends Component {
           name,
           icon: 'circle',
         })),
+        selected: legendState
       },
       tooltip: {
         ...defaultOptions.tooltip,
         trigger: 'item',
-        formatter: ({ name, value }) => {
-          const firstLine = 'a money would cost<br/>';
+        formatter: (data) => {
+          const { name, value, seriesName } = data;
+          const firstLine = `${seriesName} would cost<br/>`;
           const secondLine = `<b>${value.toFixed(2)} kr</b> in ${name}`;
           return firstLine + secondLine;
         },
