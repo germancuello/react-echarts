@@ -14,41 +14,9 @@ class Chart extends Component {
     return updatedData;
   }
 
-  getEchartDefaultOption() {
-    return {
-      animation: true,
-      tooltip: {
-        trigger: 'item',
-        position: 'top',
-        axisPointer: {
-          type: 'shadow',
-        },
-        opacity: 0.9,
-        backgroundColor: '#ddd',
-        textStyle: {
-          color: '#000',
-        },
-        confine: true,
-      },
-      grid: {
-        left: 200,
-        right: 60,
-        bottom: 50,
-        top: 10,
-        containLabel: false,
-        show: true,
-        borderWidth: 0,
-      },
-      xAxis: [],
-      yAxis: [],
-      series: [],
-    };
-  }
-
   getChartOption = () => {
     const { startYear, backgroundColor, selectedLegends } = this.props;
 
-    const defaultOptions = this.getEchartDefaultOption();
     const updatedData = this.updateDataByAddtionalPrice();
 
     const legendState = {};
@@ -60,7 +28,12 @@ class Chart extends Component {
 
     const options = {
       grid: {
-        ...defaultOptions.grid,
+        left: 200,
+        right: 60,
+        bottom: 50,
+        top: 10,
+        containLabel: false,
+        show: true,
         borderWidth: 2,
         backgroundColor,
       },
@@ -75,8 +48,17 @@ class Chart extends Component {
         selected: legendState
       },
       tooltip: {
-        ...defaultOptions.tooltip,
         trigger: 'item',
+        position: 'top',
+        axisPointer: {
+          type: 'shadow',
+        },
+        opacity: 0.9,
+        backgroundColor: '#ddd',
+        textStyle: {
+          color: '#000',
+        },
+        confine: true,
         formatter: (data) => {
           const { name, value, seriesName } = data;
           const firstLine = `${seriesName} would cost<br/>`;

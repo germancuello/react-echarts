@@ -1,0 +1,12 @@
+.app-slider {
+  width: 100%;
+  margin-left: 200px;
+}
+
+.app-slider-input {
+  width: 50%;
+}
+
+.app-slider-datalist {
+  display: flex;
+}

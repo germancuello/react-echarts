@@ -1,14 +1,15 @@
 .app-chart {
-  height: 500px;
+  height: 80%;
   width: 100%;
   padding: 10px 20px;
 }
 
-.app-slider {
+.app-component1 {
+  height: 400px;
   width: 100%;
-  margin-left: 200px;
 }
 
-.app-slider-input {
-  width: 50%;
+.app-component2 {
+  height: 400px;
+  width: 100%;
 }
