@@ -13,6 +13,16 @@ export default function Slider({
     <div className="app-slider">
       Price given on slider: {value}
       <br />
+      <datalist id={tickmarks} className="app-slider-datalist">
+        {sliderValues.map((item, idx) =>
+          <div
+            key={`slider-${idx}`}
+            style={{ display: idx !== 0 && idx !== sliderValues.length - 1 ? 'none' : null }}
+          >
+            <option value={item} label={item}/>
+          </div>
+        )}
+      </datalist>
       <input
         type="range"
         list={tickmarks}
@@ -23,11 +33,6 @@ export default function Slider({
         onInput={onSliderInput}
         className="app-slider-input"
       />
-      {/* <datalist id={tickmarks} className="app-slider-datalist">
-        {sliderValues.map((item, idx) =>
-          <option value={item} label={item} key={`slider-${idx}`}/>
-        )}
-      </datalist> */}
     </div>
   );
 }

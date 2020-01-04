@@ -1,12 +1,13 @@
 .app-slider {
-  width: 100%;
+  width: 700px;
   margin-left: 200px;
 }
 
 .app-slider-input {
-  width: 50%;
+  width: 700px;
 }
 
 .app-slider-datalist {
   display: flex;
+  justify-content: space-between;
 }

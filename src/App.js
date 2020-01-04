@@ -8,7 +8,7 @@ import './App.css';
 const countOfYears = 11; // This should be greater 1 than real size because of including today.
 const startYear=2021;
 const priceSliderRange = [200, 2500];
-const priceSliderStep = 200;
+const priceSliderStep = 100;
 const percentSliderRange = [-90, 200];
 const percentSliderStep = 10;
 const carbonPriceToday = 200;
@@ -128,7 +128,7 @@ class App extends Component {
               startYear={startYear}
               countOfYears={countOfYears}
               carbonPriceToday={carbonPriceToday}
-              priceGivenOnSlider={value}
+              priceGivenOnSlider={value1}
               percentGivenOnSlider={percent}
             />
           </div>
