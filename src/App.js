@@ -5,7 +5,7 @@ import Chart2 from './components/Chart2';
 import Slider from './components/Slider';
 import './App.css';
 
-const countOfYears = 10;
+const countOfYears = 11; // This should be greater 1 than real size because of including today.
 const startYear=2021;
 const priceSliderRange = [200, 2500];
 const priceSliderStep = 200;
@@ -80,7 +80,7 @@ class App extends Component {
             sliderMin={priceSliderRange[0]}
             sliderMax={priceSliderRange[1]}
             sliderStep={priceSliderStep}
-            sliderValues={priceSliderValues}
+            // sliderValues={priceSliderValues}
             tickmarks="tickmarks"
             onSliderInput={({ target: { value } }) => this.setState({ value })}
           />
@@ -105,7 +105,7 @@ class App extends Component {
             sliderMin={priceSliderRange[0]}
             sliderMax={priceSliderRange[1]}
             sliderStep={priceSliderStep}
-            sliderValues={priceSliderValues}
+            // sliderValues={priceSliderValues}
             tickmarks="tickmarks2-0"
             onSliderInput={({ target: { value } }) => this.setState({ value1: value })}
           />
@@ -114,7 +114,7 @@ class App extends Component {
             sliderMin={percentSliderRange[0]}
             sliderMax={percentSliderRange[1]}
             sliderStep={percentSliderStep}
-            sliderValues={percentSliderValues}
+            // sliderValues={percentSliderValues}
             tickmarks="tickmarks2-1"
             onSliderInput={({ target: { value } }) => this.setState({ percent: value })}
           />
