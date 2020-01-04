@@ -23,11 +23,11 @@ export default function Slider({
         onInput={onSliderInput}
         className="app-slider-input"
       />
-      <datalist id={tickmarks} className="app-slider-datalist">
+      {/* <datalist id={tickmarks} className="app-slider-datalist">
         {sliderValues.map((item, idx) =>
           <option value={item} label={item} key={`slider-${idx}`}/>
         )}
-      </datalist>
+      </datalist> */}
     </div>
   );
 }

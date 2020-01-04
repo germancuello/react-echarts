@@ -15,8 +15,8 @@ const carbonPriceToday = 200;
 const priceGivenOfCO2 = 1500;
 const percentGiven = 50;
 
-const emissionsToday = 8.939;
-const emissionsLast = 4.47;
+const emissionsToday = 8.93902859111264;
+const emissionsLast = emissionsToday / 2;
 
 const data = [
   {
@@ -79,8 +79,8 @@ class App extends Component {
             value={value}
             sliderMin={priceSliderRange[0]}
             sliderMax={priceSliderRange[1]}
-            sliderStep={priceSliderStep}
-            // sliderValues={priceSliderValues}
+            sliderStep="50"
+            sliderValues={priceSliderValues}
             tickmarks="tickmarks"
             onSliderInput={({ target: { value } }) => this.setState({ value })}
           />
@@ -104,8 +104,8 @@ class App extends Component {
             value={value1}
             sliderMin={priceSliderRange[0]}
             sliderMax={priceSliderRange[1]}
-            sliderStep={priceSliderStep}
-            // sliderValues={priceSliderValues}
+            sliderStep="50"
+            sliderValues={priceSliderValues}
             tickmarks="tickmarks2-0"
             onSliderInput={({ target: { value } }) => this.setState({ value1: value })}
           />
@@ -113,8 +113,8 @@ class App extends Component {
             value={percent}
             sliderMin={percentSliderRange[0]}
             sliderMax={percentSliderRange[1]}
-            sliderStep={percentSliderStep}
-            // sliderValues={percentSliderValues}
+            sliderStep="1"
+            sliderValues={percentSliderValues}
             tickmarks="tickmarks2-1"
             onSliderInput={({ target: { value } }) => this.setState({ percent: value })}
           />
