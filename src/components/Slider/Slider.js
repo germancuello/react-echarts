@@ -14,6 +14,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Slider({
+  type,
   value,
   sliderStep,
   sliderMin,
@@ -26,7 +27,7 @@ export default function Slider({
   return (
     <div className={classes.root}>
       <Typography id="discrete-slider-always" gutterBottom>
-        Price given on slider: {value}
+        {type !== 0 ? 'Percent' : 'Price'} given on slider: {value} {type !== 0 ? '%' : 'kr'}
       </Typography>
       <MuiSlider
         value={value}

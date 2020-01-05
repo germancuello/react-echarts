@@ -76,6 +76,7 @@ class App extends Component {
         <div className="app-component1">
           <h2>Component 1</h2>
           <Slider
+            type={0}
             value={value}
             sliderMin={priceSliderRange[0]}
             sliderMax={priceSliderRange[1]}
@@ -102,6 +103,7 @@ class App extends Component {
         <div className="app-component2">
           <h2>Component 2</h2>
           <Slider
+            type={0}
             value={value1}
             sliderMin={priceSliderRange[0]}
             sliderMax={priceSliderRange[1]}
@@ -110,6 +112,7 @@ class App extends Component {
             onSliderInput={(e, value) => this.setState({ value1: value })}
           />
           <Slider
+            type={1}
             value={percent}
             sliderMin={percentSliderRange[0]}
             sliderMax={percentSliderRange[1]}
