@@ -8,7 +8,7 @@ import './App.css';
 const countOfYears = 11; // This should be greater 1 than real size because of including today.
 const startYear=2021;
 const priceSliderRange = [200, 2500];
-const priceSliderStep = 100;
+const priceSliderStep = 200;
 const percentSliderRange = [-90, 200];
 const percentSliderStep = 10;
 const carbonPriceToday = 200;
@@ -79,10 +79,11 @@ class App extends Component {
             value={value}
             sliderMin={priceSliderRange[0]}
             sliderMax={priceSliderRange[1]}
-            sliderStep="50"
+            sliderStep={50}
             sliderValues={priceSliderValues}
-            tickmarks="tickmarks"
-            onSliderInput={({ target: { value } }) => this.setState({ value })}
+            onSliderInput={(e, value) => {
+              this.setState({ value });
+            }}
           />
           <div className="app-chart">
             <Chart
@@ -104,19 +105,17 @@ class App extends Component {
             value={value1}
             sliderMin={priceSliderRange[0]}
             sliderMax={priceSliderRange[1]}
-            sliderStep="50"
+            sliderStep={50}
             sliderValues={priceSliderValues}
-            tickmarks="tickmarks2-0"
-            onSliderInput={({ target: { value } }) => this.setState({ value1: value })}
+            onSliderInput={(e, value) => this.setState({ value1: value })}
           />
           <Slider
             value={percent}
             sliderMin={percentSliderRange[0]}
             sliderMax={percentSliderRange[1]}
-            sliderStep="1"
+            sliderStep={1}
             sliderValues={percentSliderValues}
-            tickmarks="tickmarks2-1"
-            onSliderInput={({ target: { value } }) => this.setState({ percent: value })}
+            onSliderInput={(e, value) => this.setState({ percent: value })}
           />
           <div className="app-chart">
             <Chart2

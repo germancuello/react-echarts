@@ -1,37 +1,52 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import MuiSlider from '@material-ui/core/Slider';
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: 700,
+    paddingLeft: 50,
+  },
+  margin: {
+    height: theme.spacing(3),
+  },
+}));
 
 export default function Slider({
   value,
+  sliderStep,
   sliderMin,
   sliderMax,
-  sliderStep,
   sliderValues,
-  tickmarks,
   onSliderInput,
 }) {
+  const classes = useStyles();
+
   return (
-    <div className="app-slider">
-      Price given on slider: {value}
-      <br />
-      <datalist id={tickmarks} className="app-slider-datalist">
-        {sliderValues.map((item, idx) =>
-          <div
-            key={`slider-${idx}`}
-            style={{ display: idx !== 0 && idx !== sliderValues.length - 1 ? 'none' : null }}
-          >
-            <option value={item} label={item}/>
-          </div>
-        )}
-      </datalist>
-      <input
-        type="range"
-        list={tickmarks}
+    <div className={classes.root}>
+      <Typography id="discrete-slider-always" gutterBottom>
+        Price given on slider: {value}
+      </Typography>
+      <MuiSlider
         value={value}
+        aria-labelledby="discrete-slider-always"
+        step={sliderStep}
+        marks={[
+          {
+            value: sliderMin,
+            label: sliderMin,
+          },
+          {
+            value: sliderMax,
+            label: sliderMax,
+          },
+          ...sliderValues.map(value => ({ value })),
+        ]}
+        onChange={onSliderInput}
         min={sliderMin}
         max={sliderMax}
-        step={sliderStep}
-        onInput={onSliderInput}
-        className="app-slider-input"
+        valueLabelDisplay="on"
       />
     </div>
   );
