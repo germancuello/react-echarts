@@ -74,7 +74,7 @@ class App extends Component {
     return (
       <>
         <div className="app-component1">
-          <h2>Component 1</h2>
+          <h2>First Chart</h2>
           <Slider
             type={0}
             value={value}
